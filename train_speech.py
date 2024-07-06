@@ -1,17 +1,4 @@
 
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Sep  9 08:50:28 2022
-
-@author: ying
-"""
-
-
-
-
-
-#@title Importation
 import logging
 import sys
 import tempfile
