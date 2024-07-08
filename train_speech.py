@@ -473,8 +473,8 @@ for P4 in range(1):
                 
                 trainloaderCV = torch.utils.data.DataLoader(
                                   train_CV_dataset[fold],
-                                  batch_size =14,
-                                  # num_workers=16,
+                                  batch_size =16,
+                                
                                   drop_last = False,
 
                                   shuffle=True)
