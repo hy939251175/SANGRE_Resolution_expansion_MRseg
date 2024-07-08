@@ -452,6 +452,7 @@ for P4 in range(1):
             
              
             optimizer = torch.optim.AdamW(model.parameters(), lr=LR_)  
+            # optimizer = torch.optim.AdamW(model.parameters(), lr=LR_,weight_decay=0.00001)  
             scheduler =torch.optim.lr_scheduler.PolynomialLR(optimizer, total_iters=15000, power=1.0)
             no_classes = 7
  
@@ -500,7 +501,7 @@ for P4 in range(1):
                     epoch_loss = 0
                     step = 0
                     for batch_data in trainloaderCV:
-                        
+                        lc1, lc2 = 0.5, 0.5
                         step += 1
                         inputs, labels = batch_data['img'].to(device),  batch_data['seg'].to(device)
                         optimizer.zero_grad()
@@ -508,9 +509,12 @@ for P4 in range(1):
                         out = 0
                         for ind in outputs:
                             out += ind
-                     
-                        loss=loss_function(out,labels)
                         
+                        # print('out shape',out.shape,'label shape',labels[:].long().shape)
+                        loss_dce=loss_function(out,labels)
+                        labels= torch.squeeze(labels,dim=1)
+                        loss_ce = ce_loss(out,labels[:].long())
+                        loss = lc1*loss_dce+lc2*loss_ce
                         loss.backward()
                         optimizer.step()
                         # print(val_loss)
