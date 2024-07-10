@@ -24,4 +24,4 @@ For Speech MRI, run ``` CUDA_VISIBLE_DEVICES=0 python test_speech.py ```
 
 ## Acknowledgement
 
-We appreciate the work of [G-CASCADE](https://github.com/SLDGroup/G-CASCADE) for providing the foundation of our framework. 
+We appreciate the work of [G-CASCADE](https://github.com/SLDGroup/G-CASCADE) for providing the foundation of our framework. Also, thank our collegues Aggie and Oscar for the help.
