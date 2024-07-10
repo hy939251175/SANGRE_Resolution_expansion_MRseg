@@ -171,12 +171,12 @@ for i in range(5):
         
                     
             result=[
-                    [test_vol,k,'Head',float(m[0,1]),float(pp_HD[0,1]),'PVTUnet'],
-                    [test_vol,k,'Soft-palate',float(m[0,2]),float(pp_HD[0,2]),'PVTUnet'],
-                    [test_vol,k,'Jaw',float(m[0,3]),float(pp_HD[0,3]),'PVTUnet'],
-                    [test_vol,k,'Tongue',float(m[0,4]),float(pp_HD[0,4]),'PVTUnet'],
-                    [test_vol,k,'Vocal-Tract',float(m[0,5]),float(pp_HD[0,5]),'PVTUnet'],
-                    [test_vol,k,'Tooth-space',float(m[0,6]),float(pp_HD[0,6]),'PVTUnet']
+                    [test_vol,k,'Head',float(m[0,1]),float(pp_HD[0,1]),'SNet'],
+                    [test_vol,k,'Soft-palate',float(m[0,2]),float(pp_HD[0,2]),'SNet'],
+                    [test_vol,k,'Jaw',float(m[0,3]),float(pp_HD[0,3]),'SNet'],
+                    [test_vol,k,'Tongue',float(m[0,4]),float(pp_HD[0,4]),'SNet'],
+                    [test_vol,k,'Vocal-Tract',float(m[0,5]),float(pp_HD[0,5]),'SNet'],
+                    [test_vol,k,'Tooth-space',float(m[0,6]),float(pp_HD[0,6]),'SNet']
                     ]
             
             df1=pd.DataFrame(result,columns=df.columns)
