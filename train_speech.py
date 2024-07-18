@@ -518,7 +518,7 @@ for P4 in range(1):
                         loss.backward()
                         optimizer.step()
                         # print(val_loss)
-                        scheduler.step()
+                        # scheduler.step()
                         epoch_loss += loss.item()
                         epoch_len = len(train_CV_dataset[fold]) // trainloaderCV.batch_size
                         #print(f"{step}/{epoch_len}, train_loss: {loss.item():.4f}")
