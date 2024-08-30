@@ -29,7 +29,7 @@ from test_ACDC import inference
 from lib.net import SANGRENet
 from torchinfo import summary
 from thop import profile
-import torch
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--batch_size", default=18, help="batch size") #12
