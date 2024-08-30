@@ -27,7 +27,9 @@ from utils.utils import DiceLoss, calculate_dice_percase, val_single_volume
 from utils.dataset_ACDC import ACDCdataset, RandomGenerator
 from test_ACDC import inference
 from lib.net import SANGRENet
-
+from torchinfo import summary
+from thop import profile
+import torch
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--batch_size", default=18, help="batch size") #12
@@ -91,10 +93,7 @@ if not os.path.exists(test_save_path):
 
 net = SANGRENet(in_channels=1,num_classes=4).cuda()
 
-from torchinfo import summary
-#    summary(model, (1, 3, 352, 352))
-from thop import profile
-import torch
+#Calculate param and FLOPs
 input = torch.randn(1, 1, 256, 256).to('cuda')
 macs, params = profile(net, inputs=(input,))
 print('macs:', macs / 1000000000)
