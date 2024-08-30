@@ -6,28 +6,21 @@ import logging
 import argparse
 import torch
 import torch.nn as nn
-import torch.nn.functional as F
 import torch.optim as optim
 from torch.nn.modules.loss import CrossEntropyLoss
-import torchvision
 from torchvision import transforms
 from torch.utils.data import DataLoader
 import torch.backends.cudnn as cudnn
 import random
 import time
-
-
 import numpy as np
 from tqdm import tqdm
-from medpy.metric import dc,hd95
+from medpy.metric import dc
 from scipy.ndimage import zoom
-
-from utils.utils import powerset
-from utils.utils import DiceLoss, calculate_dice_percase, val_single_volume
+from utils.utils import DiceLoss
 from utils.dataset_ACDC import ACDCdataset, RandomGenerator
 from test_ACDC import inference
 from lib.net import SANGRENet
-from torchinfo import summary
 from thop import profile
 
 
@@ -147,7 +140,6 @@ optimizer = optim.AdamW(net.parameters(), lr=base_lr, weight_decay=0.00001)
 def val():
     logging.info("Validation ===>")
     dc_sum=0
-    metric_list = 0.0
     net.eval()
     for i, val_sampled_batch in enumerate(valloader):
         val_image_batch, val_label_batch = val_sampled_batch["image"], val_sampled_batch["label"]
