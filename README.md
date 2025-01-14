@@ -5,7 +5,7 @@
 * Speech MRI Data - The data is available at [Zenodo](https://zenodo.org/records/10046815). The processed dataset in .npy form can be downloaded from [Google Drive](https://drive.google.com/file/d/1wT64P9YtIot7PrxMrnJRkXJ8T5sBSiWS/view?usp=sharing). Save the downloaded files to the same folder path as the code for training.
 
 ## Pretrained model:
-*Pretrained weight of the encoder can be downloaded [here](https://github.com/whai362/PVT) and the paper is [here](https://link.springer.com/article/10.1007/s41095-022-0274-8). Once downloaded 'pvt_v2_b2.pth' put it into directory 'SANGRE'.
+* Pretrained weight of the encoder can be downloaded [here](https://github.com/whai362/PVT) and the paper is [here](https://link.springer.com/article/10.1007/s41095-022-0274-8). Once downloaded 'pvt_v2_b2.pth' put it into directory 'SANGRE'.
 
 ## Training
 ```
