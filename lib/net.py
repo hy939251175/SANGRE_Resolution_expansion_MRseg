@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from lib.pvt_v2 import pvt_v2_b2
-from lib.refinement_module import SelFuseFeature
+# from lib.refinement_module import SelFuseFeature
 
 
 
