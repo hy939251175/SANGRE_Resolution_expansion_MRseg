@@ -66,7 +66,7 @@ from monai.transforms import (
     ScaleIntensityd,
     EnsureTyped,
     EnsureType)
-from lib.pvt_debug import PvtUNet
+from lib.pvt_debug import SANGRENet
 torch.use_deterministic_algorithms(True)
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -111,7 +111,7 @@ torch.use_deterministic_algorithms(False)
 
 
 
-model = PvtUNet(in_channels=1,num_classes=7).cpu()
+model = SANGRENet(in_channels=1,num_classes=7).cpu()
 # model=UNet_n_classes(n_classes=7).cpu()
 
 
